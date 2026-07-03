@@ -1234,3 +1234,93 @@ External APIs
 AERIS follows a modular, layered, and AI-first architecture that separates data collection, business logic, artificial intelligence, and presentation into independent components.
 
 This design enables rapid MVP development while providing a clear migration path toward a scalable production system for smart city deployments.
+
+---
+
+# Architecture Decisions
+
+The following key architectural decisions were made during the design of AERIS.
+
+| Decision | Selected Approach | Reason |
+|----------|-------------------|--------|
+| Architecture | Layered Modular Architecture | Easy maintenance and scalability |
+| Frontend | React + TypeScript | Component-based and scalable |
+| Styling | Tailwind CSS | Rapid UI development |
+| Backend | FastAPI | High performance and native Python AI support |
+| Database | PostgreSQL | Structured relational data and reliability |
+| Maps | Leaflet + OpenStreetMap | Open-source and cost-effective |
+| AI Models | XGBoost + LightGBM + SHAP | Accurate, fast, and explainable |
+| LLM | Gemini API | Natural language reports and summaries |
+| Hosting | Vercel + Render | Free-tier friendly and production-ready |
+| External Data | AQICN + OpenWeather + NASA FIRMS | Reliable public environmental data |
+
+---
+
+# Why Layered Architecture?
+
+A layered architecture separates responsibilities into independent modules.
+
+Benefits include:
+
+- Easier maintenance
+- Better scalability
+- Independent testing
+- Reusable components
+- Cleaner codebase
+- Faster feature development
+
+---
+
+# Design Goals
+
+The architecture is designed to be:
+
+- Modular
+- Explainable
+- AI-First
+- Scalable
+- Secure
+- Maintainable
+- Production-Ready
+
+---
+
+# Current Limitations
+
+The hackathon prototype intentionally simplifies certain aspects to ensure timely delivery.
+
+Current limitations include:
+
+- Public APIs instead of live government integrations
+- Rule-based recommendations for some scenarios
+- Single-city demonstration
+- No authentication or role-based access control
+- No real-time IoT sensor integration
+- Limited historical dataset
+
+---
+
+# Future Improvements
+
+Future versions of AERIS can be enhanced with:
+
+- CPCB Live API Integration
+- IoT Sensor Networks
+- Digital Twin Simulation
+- Agentic AI
+- Multi-Agent Systems
+- Redis Caching
+- Docker & Kubernetes
+- Smart City Command Center Integration
+- Multi-City Deployment
+- Citizen Mobile Application
+
+---
+
+# Conclusion
+
+AERIS is designed as an AI-powered Urban Decision Intelligence Platform that transforms environmental monitoring into actionable decision-making.
+
+The proposed architecture combines modular software engineering, explainable AI, environmental data fusion, and scalable cloud deployment to support government agencies in predicting pollution, identifying root causes, evaluating policy interventions, and improving urban environmental governance.
+
+Although the current implementation focuses on a hackathon MVP, the architecture is intentionally designed to support future expansion into a production-grade smart city platform.
