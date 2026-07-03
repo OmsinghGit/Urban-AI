@@ -2,126 +2,165 @@
 
 # Product Features
 
-This document defines the scope of the MVP (Minimum Viable Product) and future roadmap for AERIS.
+## Objective
+
+AERIS is an AI-powered Urban Decision Intelligence Platform designed to help government agencies monitor, predict, analyze, and improve urban air quality through actionable insights.
 
 ---
 
-# MVP Features (Must Have)
+# MVP Features (Hackathon Scope)
 
-These features will be developed for the hackathon prototype.
+## 1. AI Decision Dashboard
 
-## 1. Smart AQI Dashboard
-
-- Live AQI Overview
+- Real-time AQI Monitoring
 - Interactive City Map
-- Heatmap Visualization
-- Area-wise AQI
+- Pollution Heatmap
+- Ward-wise AQI Overview
 
 ---
 
-## 2. AQI Forecast
+## 2. AQI Forecasting
 
-- Next 24 Hours Prediction
+- 24-Hour AQI Prediction
 - Trend Visualization
 - Confidence Score
 
 ---
 
-## 3. AI Recommendation Engine
+## 3. Root Cause Analysis
 
-The AI analyzes available environmental data and suggests suitable actions.
+The system identifies the most likely causes of pollution by analyzing:
 
-Example:
+- Weather Conditions
+- Historical AQI
+- Nearby Fire Hotspots
+- Population Density
+- Environmental Factors
 
-- Restrict heavy vehicles
-- Increase water sprinkling
-- Reduce construction activity
-- Issue health advisory
+Output:
+
+- Top Pollution Sources
+- Source Contribution
+- AI Confidence
 
 ---
 
-## 4. Policy Simulator ⭐
+## 4. Decision Intelligence Engine ⭐
 
-Users can simulate different policy decisions before implementation.
+Instead of simply reporting pollution, AERIS recommends actions.
 
 Examples:
 
-- Reduce heavy traffic by 20%
-- Stop construction for 2 days
-- Increase green zones
-- Restrict diesel vehicles
+- Restrict Heavy Vehicles
+- Increase Water Sprinkling
+- Suspend Construction Activity
+- Issue Public Health Advisory
 
-The system estimates the possible impact on AQI.
+Each recommendation includes:
 
----
-
-## 5. Explainable AI
-
-Instead of giving only recommendations, the system explains:
-
-- Why this recommendation?
-- Which factors contributed?
-- Confidence level
+- Reason
+- Priority
+- Expected Impact
+- Confidence Score
 
 ---
 
-# Nice to Have Features
+## 5. Policy Simulator ⭐
 
-These features will be implemented only if time permits.
+Users can simulate environmental policies before implementation.
 
-- Citizen Mobile View
-- AI Chat Assistant
-- Multi-city Comparison
-- Historical Analytics
-- Notification System
-- Voice Assistant
+Examples:
+
+- Reduce Traffic by 20%
+- Ban Construction for 48 Hours
+- Increase Green Coverage
+- Restrict Diesel Vehicles
+
+The system estimates:
+
+- Expected AQI Improvement
+- High-Risk Areas
+- Confidence Level
 
 ---
 
-# Future Roadmap
+## 6. Explainable AI
 
-Future versions may include:
+Every AI prediction includes:
 
+- Why this prediction?
+- Key contributing factors
+- Model confidence
+- Recommended next action
+
+---
+
+## 7. Government Decision Report
+
+Generate a downloadable report containing:
+
+- Current AQI
+- Forecast
+- Hotspots
+- AI Recommendations
+- Suggested Actions
+
+---
+
+# Future Features
+
+- Citizen Mobile Application
+- Hyperlocal Health Alerts
+- Safe Route Recommendation
+- Cross-City Benchmarking
+- Digital Twin
 - IoT Sensor Integration
 - Satellite Image Analysis
-- Digital Twin
-- Carbon Emission Tracking
-- Smart Traffic Integration
-- Government ERP Integration
-- AI Policy Optimization
+- Multi-Agent AI
+- Knowledge Graph
 
 ---
 
-# Features Not Included in MVP
+# Features Excluded from MVP
 
-To keep the project focused, the following features are intentionally excluded.
+To keep the hackathon prototype focused:
 
-- User Authentication
-- Role-based Access Control
+- Authentication & User Management
+- Role-Based Access Control
 - Payment System
-- Large-scale Cloud Infrastructure
 - Mobile Application
-- Real-time IoT Deployment
-- Distributed Systems
-- Multi-language Support
+- Real-Time IoT Deployment
+- Distributed Architecture
+- Multi-Language Support
 
 ---
 
 # Success Criteria
 
-The MVP will be considered successful if it can:
+The MVP should successfully demonstrate:
 
-- Display air quality data.
-- Forecast future AQI.
-- Generate AI-powered recommendations.
-- Simulate policy impact.
-- Explain recommendations.
-- Demonstrate an end-to-end workflow.
+- Real-time AQI Monitoring
+- AI-based AQI Forecasting
+- Root Cause Analysis
+- Explainable AI
+- Decision Recommendations
+- Policy Simulation
+- Government Decision Report
 
 ---
 
-# Core Value Proposition
+# Product Vision
 
-AERIS is not another AQI dashboard.
+Current platforms answer:
 
-It is an AI-powered Decision Intelligence Platform that helps governments predict, understand and improve urban air quality through actionable insights and policy simulation.
+> **"What is the AQI?"**
+
+AERIS answers:
+
+- Why did pollution increase?
+- Which locations need immediate attention?
+- What action should be taken?
+- What will be the expected impact?
+- How confident is the AI prediction?
+
+AERIS transforms environmental monitoring into AI-powered decision intelligence for governments and smart city authorities.

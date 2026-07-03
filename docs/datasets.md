@@ -4,69 +4,79 @@
 
 ## Objective
 
-AERIS uses publicly available, production-friendly datasets that are reliable, scalable, and easy to integrate for an AI-powered Urban Decision Intelligence Platform.
+AERIS combines trusted public datasets to enable real-time monitoring, AI forecasting, hotspot detection, and decision support for urban air quality management.
 
 ---
 
-# Selected Datasets
+# Core Datasets (MVP)
 
-| Data Type | Dataset | Purpose |
-|-----------|----------|---------|
-| Air Quality | OpenAQ | AQI, PM2.5, PM10, NO₂, SO₂, CO, O₃ |
-| Weather | Open-Meteo | Temperature, Humidity, Wind, Rainfall |
-| Road Network | OpenStreetMap / Geofabrik | Roads, Intersections, Mobility Network |
-| Population | WorldPop | Population Density & Exposure Analysis |
-| Satellite | NASA FIRMS | Fire & Thermal Anomaly Detection |
-| Green Cover | Copernicus GHSL | Vegetation & Urban Green Analysis |
-| Industrial Sources | Global Power Plant Database | Industrial Emission Proxy |
-| Construction | Municipal Open Data | Construction Activity (Optional) |
+| Dataset | Purpose |
+|---------|---------|
+| OpenAQ | AQI & Pollutant Data (PM2.5, PM10, NO₂, SO₂, CO, O₃) |
+| OpenWeather / Open-Meteo | Weather & Meteorological Data |
+| OpenStreetMap (OSM) | Roads, Locations & Geospatial Mapping |
+| WorldPop | Population Density & Exposure Analysis |
+
+---
+
+# Supporting Datasets (Optional)
+
+| Dataset | Purpose |
+|---------|---------|
+| NASA FIRMS | Fire & Thermal Hotspot Detection |
+| Copernicus GHSL | Urban Land Cover & Green Spaces |
+| Global Power Plant Database | Industrial Emission Context |
+| Municipal Open Data | Construction & Local Activities |
+
+---
+
+# Dataset Usage
+
+| AI Feature | Required Dataset |
+|------------|------------------|
+| AQI Forecasting | OpenAQ + Weather |
+| Hotspot Detection | OpenAQ + OSM |
+| Root Cause Analysis | AQI + Weather + Satellite |
+| Exposure Analysis | AQI + WorldPop |
+| Decision Support | Combined Multi-Source Data |
 
 ---
 
 # MVP Dataset Stack
 
-For the hackathon prototype, AERIS will use:
+For the hackathon prototype:
 
 - OpenAQ
-- Open-Meteo
-- OpenStreetMap / Geofabrik
+- OpenWeather API
+- OpenStreetMap
 - WorldPop
 
-Optional datasets:
-
-- NASA FIRMS
-- GHSL
-- Global Power Plant Database
+These datasets are sufficient to demonstrate the complete AI workflow.
 
 ---
 
-# Dataset Selection Criteria
+# Selection Criteria
 
 - Publicly Available
-- Reliable
 - Frequently Updated
-- API or Download Support
-- Easy Integration
-- Production Friendly
-- Scalable
+- Easy API Integration
+- Reliable Data Source
+- Scalable for Production
 
 ---
 
-# Current Limitations
+# Limitations
 
-- Live traffic data is city-specific.
-- Construction data is fragmented across municipalities.
-- Industrial emission data is mostly proxy-based.
-- Some datasets require geospatial preprocessing.
+- Live traffic and construction datasets are not consistently available.
+- Industrial emissions are estimated using proxy datasets.
+- Some geospatial datasets require preprocessing.
 
 ---
 
 # Future Expansion
 
-Future versions may integrate:
-
-- IoT Sensor Networks
 - CPCB Live Monitoring Stations
-- Smart City Command Center Data
-- Live Traffic Sensors
-- Satellite-based Air Quality Products
+- Smart City IoT Sensors
+- Live Traffic Data
+- Satellite Air Quality Products
+- Industrial Emission APIs

@@ -4,49 +4,45 @@
 
 ## Objective
 
-AERIS uses reliable, well-documented, and production-friendly APIs to provide real-time environmental intelligence for the hackathon MVP.
+AERIS integrates reliable, scalable, and developer-friendly APIs to collect real-time environmental data, perform AI-driven analysis, and support government decision-making.
 
 ---
 
-# Selected APIs
+# Core APIs (MVP)
 
-| Category | Selected API | Purpose |
-|----------|--------------|---------|
-| Air Quality | AQICN API | Real-time AQI & Pollution Data |
-| Weather | OpenWeather API | Weather Forecast & Air Pollution |
-| Maps | Google Maps Platform | Maps & Visualization |
-| Traffic | Google Maps Platform | Traffic Density & Travel Time |
-| Reverse Geocoding | Google Maps Platform | Location & Address Lookup |
-| Satellite | Google Earth Engine / NASA | Environmental Analysis |
-| Geospatial | OpenStreetMap / Geofabrik | Road Network & Spatial Data |
+| Category | API | Purpose |
+|----------|-----|---------|
+| Air Quality | AQICN API | Real-time AQI & Pollutant Data |
+| Weather | OpenWeather API | Weather Forecast & Meteorological Data |
+| Geocoding | OpenStreetMap (Nominatim) | Location Search & Reverse Geocoding |
+| Maps | Leaflet + OpenStreetMap | Interactive Maps & Visualization |
+
+---
+
+# Optional APIs
+
+| Category | API | Purpose |
+|----------|-----|---------|
+| Satellite | NASA FIRMS | Fire & Thermal Hotspots |
+| Earth Observation | Google Earth Engine | Environmental Analytics |
+| Government | CPCB API (if available) | Official Air Quality Data |
+| Traffic | Google Maps Traffic API | Congestion Analysis |
 
 ---
 
 # MVP API Stack
 
-The hackathon prototype will primarily use:
+The hackathon prototype will use:
 
 - AQICN API
 - OpenWeather API
-- Google Maps Platform
-- OpenStreetMap
+- OpenStreetMap (Nominatim)
+- Leaflet Maps
 
-Optional integrations:
+Optional:
 
-- Google Earth Engine
 - NASA FIRMS
-- AirNow API
-
----
-
-# Why These APIs?
-
-- Reliable documentation
-- Easy integration
-- Production-ready
-- Large developer community
-- Free tiers available
-- Scalable for future deployment
+- Google Earth Engine
 
 ---
 
@@ -56,32 +52,61 @@ AQICN API
         │
 OpenWeather API
         │
-Google Maps API
-        │
 OpenStreetMap
         │
+NASA FIRMS (Optional)
+        │
         ▼
-Backend (FastAPI / Node.js)
+Backend (FastAPI)
+
         ▼
 Decision Intelligence Engine
+
+        ▼
+REST API
+
         ▼
 Frontend Dashboard
 
 ---
 
+# Selection Criteria
+
+- Free Tier Available
+- Easy Integration
+- Reliable Documentation
+- Real-Time Data
+- Production Friendly
+- Scalable Architecture
+
+---
+
 # Limitations
 
-- Google Maps usage becomes costly at scale.
-- AQICN focuses mainly on AQI data.
-- AirNow has stronger support for the US than global regions.
-- Google Earth Engine is better suited for analytics than simple app integration.
+- AQICN coverage depends on monitoring stations.
+- OpenWeather forecasts may vary by location.
+- Google Maps Traffic API has usage costs.
+- Government APIs are not consistently available.
+- Satellite APIs require additional preprocessing.
 
 ---
 
 # Future Integrations
 
-- CPCB APIs
+- CPCB Live API
 - Smart City IoT Sensors
-- Live Traffic Feeds
-- Municipal Open Data APIs
-- Satellite-based Environmental APIs
+- Live Traffic APIs
+- Weather Radar APIs
+- Drone & Satellite Data
+- Industrial Emission APIs
+
+---
+
+# Why This API Stack?
+
+- Lightweight and hackathon-friendly
+- Mostly free APIs
+- Easy to integrate
+- Supports real-time monitoring
+- Scalable for production deployment
+- Can be extended without major architecture changes

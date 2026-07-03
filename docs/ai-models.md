@@ -4,31 +4,36 @@
 
 ## Objective
 
-AERIS uses a hybrid AI architecture where each task is handled by the most suitable AI/ML model instead of relying on a single model.
+AERIS follows a hybrid AI architecture where each component is optimized for a specific task. Instead of relying on a single AI model, forecasting, explainability, recommendations, and report generation are handled independently.
 
 ---
 
 # AI Model Stack
 
-| Task | Recommended Model |
+| Task | Model / Technique |
 |------|-------------------|
-| AQI Forecasting | Temporal Fusion Transformer (TFT) / LightGBM |
-| Time Series Forecasting | Chronos-2 / TimesFM |
+| AQI Forecasting | XGBoost / LightGBM |
+| Time-Series Analysis | LightGBM + Historical Trend Analysis |
 | Pollution Source Attribution | XGBoost + SHAP |
-| Decision Recommendations | Rule Engine + LLM |
-| Policy Simulation | Agent-Based Models (ABM) + Causal Modeling |
-| Explainability | SHAP |
-| Natural Language Reports | Gemini / OpenAI GPT |
+| Hotspot Detection | Rule Engine + Geospatial Analysis |
+| AI Recommendations | Rule-Based Decision Engine + Gemini API |
+| Report Generation | Gemini API |
+| Explainable AI | SHAP |
+| Data Visualization | Plotly / Leaflet Maps |
 
 ---
 
 # AI Pipeline
 
-Environmental Data
+Environmental APIs & Datasets
 
 ↓
 
-Data Processing
+Data Cleaning & Preprocessing
+
+↓
+
+Feature Engineering
 
 ↓
 
@@ -36,55 +41,67 @@ AQI Forecasting
 
 ↓
 
-Root Cause Analysis
+Pollution Source Attribution
 
 ↓
 
-Policy Simulation
+Hotspot Detection
 
 ↓
 
-Recommendation Engine
+Decision Recommendation Engine
 
 ↓
 
-Explainable AI
+Explainable AI (SHAP)
 
 ↓
 
-Decision Report
+Government Decision Report
 
 ---
 
 # Why Hybrid AI?
 
-Different AI tasks require different models.
+Different AI tasks require different techniques.
 
-- Tree-based models perform best on structured environmental data.
-- Time-series models handle forecasting.
-- Causal models support policy simulation.
-- LLMs generate explanations and reports.
-- SHAP explains AI predictions.
+- XGBoost/LightGBM provide accurate AQI prediction on structured data.
+- SHAP explains why a prediction was made.
+- Rule-based logic ensures reliable recommendations.
+- Gemini converts technical outputs into human-readable reports.
+- Modular architecture allows future model upgrades.
 
 ---
 
-# MVP AI Stack
+# MVP AI Stack (Hackathon)
 
-For the hackathon prototype:
-
-- LightGBM / XGBoost
+- XGBoost
+- LightGBM
 - SHAP
-- Gemini API (Report Generation)
-- Rule-based Recommendation Engine
+- Gemini API
+- Rule-Based Decision Engine
 
-Advanced models such as TFT, Chronos-2, and ABM are planned for future versions.
+This stack is lightweight, explainable, easy to implement, and suitable for a 10-day hackathon prototype.
 
 ---
 
-# Future Improvements
+# Future AI Roadmap
 
+- Temporal Fusion Transformer (TFT)
+- Chronos-2 / TimesFM
 - Graph Neural Networks (GNN)
+- Agent-Based Simulation
 - Reinforcement Learning
-- Digital Twin Simulation
 - Multi-Agent AI Systems
-- Time-Series Foundation Models
+- Digital Twin Integration
+
+---
+
+# Why This Stack?
+
+- Fast to develop
+- Easy to explain to judges
+- Uses proven ML techniques
+- Supports Explainable AI
+- Easily scalable for future research
+- Production-friendly architecture

@@ -1,93 +1,99 @@
 # Project AERIS
 
-### AI-Powered Urban Air Quality Decision Intelligence Platform
+# AI-Powered Urban Air Quality Decision Intelligence Platform
 
 ## Problem Statement
 
-Urban air pollution is one of the biggest environmental and public health challenges faced by modern cities. Although cities collect data from air quality sensors, weather stations, traffic systems, and satellite imagery, this information remains fragmented across different platforms. Existing systems mainly monitor and display Air Quality Index (AQI) values but provide limited intelligence for proactive decision-making.
+Urban air pollution is one of the most critical environmental and public health challenges affecting modern cities. Although governments collect data from air quality sensors, weather stations, satellite imagery, and other environmental sources, this information remains fragmented and is primarily used for monitoring rather than decision-making.
 
-Government agencies and city authorities often react only after pollution levels become critical. They lack an integrated AI-driven system that can predict air quality, identify pollution hotspots, explain possible contributing factors, recommend suitable interventions, and simulate the impact of policy decisions before implementation.
+Existing air quality platforms effectively answer **"What is happening?"** by displaying AQI values and forecasts. However, they rarely answer **"Why is it happening?"**, **"What should be done?"**, or **"What will be the impact of that decision?"**
 
-AERIS aims to bridge this gap by building an AI-powered Urban Decision Intelligence Platform that transforms raw environmental data into actionable insights for smarter and faster decision-making.
+As a result, government agencies often rely on manual analysis, delayed coordination, and reactive interventions instead of proactive, data-driven environmental management.
 
----
-
-## Why This Problem?
-
-- Air pollution affects millions of people every day.
-- Existing systems mainly monitor AQI instead of providing actionable insights.
-- Government decisions are often reactive rather than proactive.
-- Environmental data is scattered across multiple independent systems.
-- AI can help predict, explain, and recommend actions before pollution reaches critical levels.
+AERIS addresses this gap by transforming environmental data into AI-powered decision intelligence. The platform integrates multiple data sources, predicts pollution trends, identifies probable causes, recommends suitable interventions, simulates policy outcomes, and generates explainable insights to support faster and more informed government decisions.
 
 ---
 
-## Pain Points
+# Why This Problem?
 
-- Fragmented environmental data sources.
-- Lack of real-time decision support.
-- No AI-driven policy impact analysis.
-- Limited prediction of pollution trends.
-- Difficulty identifying pollution hotspots.
-- Manual analysis consumes significant time.
-- Existing dashboards answer "What is happening?" but not "What should we do next?"
+- Air pollution directly impacts public health and urban sustainability.
+- Environmental data exists but remains fragmented across multiple systems.
+- Current platforms focus on monitoring instead of decision support.
+- Government responses are often reactive rather than proactive.
+- Advances in AI make explainable, data-driven environmental decision-making practical.
 
 ---
 
-## Stakeholders
+# Core Challenges
 
-### Primary Stakeholders
+- Fragmented environmental datasets
+- Delayed decision-making
+- Limited pollution forecasting
+- No root cause analysis
+- No policy impact estimation
+- Weak inter-department coordination
+- Lack of explainable AI for government users
+
+---
+
+# Stakeholders
+
+## Primary
 
 - Municipal Corporations
-- Central Pollution Control Board (CPCB)
-- State Pollution Control Boards
+- CPCB & State Pollution Control Boards
 - Smart City Authorities
 - Urban Planning Departments
 
-### Secondary Stakeholders
+## Secondary
 
-- Citizens
-- Hospitals
-- Schools
+- Health Departments
+- Traffic & Police Departments
 - Environmental Researchers
 - NGOs
-- Government Policy Makers
+- Citizens
 
 ---
 
-## End Users
+# Primary End Users
 
 - City Administrators
 - Pollution Control Officers
-- Environmental Analysts
 - Smart City Command Centers
+- Environmental Analysts
 - Policy Makers
 
 ---
 
-## Vision
+# Vision
 
-To build an AI-powered urban environmental intelligence platform that enables cities to move beyond pollution monitoring and towards intelligent, data-driven environmental decision-making.
-
----
-
-## Mission
-
-Empower governments and smart cities with AI-driven insights that help predict pollution, understand contributing factors, recommend effective interventions, and improve urban air quality.
+To build an AI-powered Urban Decision Intelligence Platform that enables governments to predict, understand, and improve urban air quality through evidence-based environmental governance.
 
 ---
 
-## Expected Outcomes
+# Mission
 
-- Better environmental decision-making
-- Faster identification of pollution hotspots
-- Improved public health awareness
-- Smarter policy planning
-- More efficient resource allocation
-- AI-assisted environmental governance
+Empower governments with explainable AI that transforms environmental monitoring into actionable recommendations, policy insights, and smarter operational decisions.
 
 ---
 
-## Project Goal
+# Expected Outcomes
 
-Develop an intelligent platform that integrates environmental data, predicts future air quality, explains possible pollution factors, recommends actionable interventions, and provides policy simulation to support smarter urban governance.
+- Faster environmental decision-making
+- Early pollution hotspot detection
+- AI-assisted intervention planning
+- Better policy evaluation
+- Improved resource allocation
+- Stronger environmental governance
+
+---
+
+# Project Goal
+
+Develop a scalable AI platform that combines environmental monitoring, AQI forecasting, root cause analysis, decision recommendations, and policy simulation into a unified government decision-support system.
+
+---
+
+# Success Definition
+
+A successful AERIS prototype should demonstrate that AI can move beyond environmental monitoring and actively support government decision-making through accurate predictions, explainable recommendations, and policy evaluation.
