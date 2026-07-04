@@ -1,4 +1,5 @@
-import Card from "../components/common/Card";
+import StatCards from "../components/dashboard/StatCards";
+import AQIChart from "../components/dashboard/AQIChart";
 
 export default function Dashboard() {
   return (
@@ -6,36 +7,14 @@ export default function Dashboard() {
       <div>
         <h1 className="text-4xl font-bold">Dashboard</h1>
 
-        <p className="text-slate-500 mt-2">
+        <p className="mt-2 text-slate-500">
           AI-Powered Urban Air Quality Decision Intelligence
         </p>
       </div>
 
-      <div className="grid grid-cols-4 gap-6">
-        <Card
-          title="Current AQI"
-          value="168"
-          subtitle="Unhealthy"
-        />
+      <StatCards />
 
-        <Card
-          title="PM2.5"
-          value="94 µg/m³"
-          subtitle="Above Safe Limit"
-        />
-
-        <Card
-          title="Temperature"
-          value="34°C"
-          subtitle="Feels Like 38°C"
-        />
-
-        <Card
-          title="Risk Level"
-          value="High"
-          subtitle="Immediate Attention"
-        />
-      </div>
+      <AQIChart />
     </div>
   );
 }
