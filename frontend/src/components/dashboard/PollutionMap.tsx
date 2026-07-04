@@ -1,23 +1,42 @@
+import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
+
 export default function PollutionMap() {
   return (
-    <div className="rounded-xl border bg-white p-6 shadow-md h-full">
+    <div className="rounded-xl border bg-white p-6 shadow-md">
       <h2 className="mb-4 text-xl font-semibold">
-        Pollution Hotspots
+        Live Pollution Map
       </h2>
 
-      <div className="flex h-80 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-slate-50">
-        <div className="text-center">
-          <p className="text-6xl">🗺️</p>
+      <MapContainer
+        center={[28.6139, 77.209]}
+        zoom={11}
+        scrollWheelZoom={true}
+        style={{
+          height: "320px",
+          width: "100%",
+          borderRadius: "12px",
+        }}
+      >
+        <TileLayer
+          attribution="© OpenStreetMap contributors"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
-          <p className="mt-3 text-slate-500">
-            Live Pollution Map
-          </p>
-
-          <p className="text-sm text-slate-400">
-            Leaflet Integration Coming Next
-          </p>
-        </div>
-      </div>
+        <CircleMarker
+          center={[28.6139, 77.209]}
+          radius={18}
+          pathOptions={{
+            color: "red",
+            fillColor: "red",
+            fillOpacity: 0.6,
+          }}
+        >
+          <Popup>
+            Delhi <br />
+            AQI : 168
+          </Popup>
+        </CircleMarker>
+      </MapContainer>
     </div>
   );
 }
