@@ -1,6 +1,7 @@
 import StatCards from "../components/dashboard/StatCards";
 import AQIChart from "../components/dashboard/AQIChart";
 import PollutionMap from "../components/dashboard/PollutionMap";
+import AIInsights from "../components/dashboard/AIInsights";
 
 export default function Dashboard() {
   return (
@@ -24,6 +25,8 @@ export default function Dashboard() {
 
         <PollutionMap />
       </div>
+
+      <AIInsights />
     </div>
   );
 }
