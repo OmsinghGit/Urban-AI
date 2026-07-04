@@ -8,9 +8,13 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { aqiTrend } from "../../constants/mockData";
+import type { AQITrend } from "../../services/dashboard.service";
 
-export default function AQIChart() {
+interface Props {
+  data: AQITrend[];
+}
+
+export default function AQIChart({ data }: Props) {
   return (
     <div className="rounded-xl border bg-white p-6 shadow-md">
       <h2 className="mb-4 text-xl font-semibold">
@@ -19,7 +23,7 @@ export default function AQIChart() {
 
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={aqiTrend}>
+          <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
 
             <XAxis dataKey="time" />

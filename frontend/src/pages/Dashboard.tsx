@@ -3,7 +3,15 @@ import AQIChart from "../components/dashboard/AQIChart";
 import PollutionMap from "../components/dashboard/PollutionMap";
 import AIInsights from "../components/dashboard/AIInsights";
 
+import { useDashboard } from "../hooks/useDashboard";
+
 export default function Dashboard() {
+  const { dashboard, loading } = useDashboard();
+
+  if (loading || !dashboard) {
+    return <h1 className="text-2xl">Loading Dashboard...</h1>;
+  }
+
   return (
     <div className="space-y-8">
       <div>
@@ -16,11 +24,11 @@ export default function Dashboard() {
         </p>
       </div>
 
-      <StatCards />
+      <StatCards stats={dashboard.stats} />
 
       <div className="grid gap-6 xl:grid-cols-3">
         <div className="xl:col-span-2">
-          <AQIChart />
+         <AQIChart data={dashboard.aqiTrend} />
         </div>
 
         <PollutionMap />

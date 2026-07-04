@@ -1,10 +1,14 @@
 import Card from "../common/Card";
-import { dashboardStats } from "../../constants/mockData";
+import type { DashboardStat } from "../../services/dashboard.service";
 
-export default function StatCards() {
+interface Props {
+  stats: DashboardStat[];
+}
+
+export default function StatCards({ stats }: Props) {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {dashboardStats.map((stat) => (
+      {stats.map((stat) => (
         <Card
           key={stat.title}
           title={stat.title}
