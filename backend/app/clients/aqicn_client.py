@@ -25,4 +25,9 @@ class AQICNClient:
 
             response.raise_for_status()
 
-            return response.json()
+        data = response.json()
+
+        if data.get("status") != "ok":
+            raise ValueError("City not found")
+
+        return data

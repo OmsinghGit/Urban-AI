@@ -15,12 +15,28 @@ export type AQITrend = {
   aqi: number;
 };
 
+export type WeatherInfo = {
+  temperature: number;
+  humidity: number;
+  wind: number;
+  condition: string;
+};
+
 export type DashboardResponse = {
   stats: DashboardStat[];
   aqiTrend: AQITrend[];
+  city: string;
+  weather: WeatherInfo;
 };
+export async function getDashboard(
+  city: string = "Delhi"
+): Promise<DashboardResponse> {
 
-export async function getDashboard(): Promise<DashboardResponse> {
-  const response = await api.get("/dashboard/");
+  const response = await api.get("/dashboard/live", {
+    params: {
+      city,
+    },
+  });
+
   return response.data;
 }
