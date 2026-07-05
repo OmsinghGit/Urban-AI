@@ -9,9 +9,19 @@ export function useDashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getDashboard()
-      .then(setDashboard)
-      .finally(() => setLoading(false));
+    async function load() {
+      try {
+        const data = await getDashboard();
+        console.log("API Response:", data);
+        setDashboard(data);
+      } catch (error) {
+        console.error("Dashboard API Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    load();
   }, []);
 
   return { dashboard, loading };

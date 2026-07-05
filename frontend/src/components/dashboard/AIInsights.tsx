@@ -1,7 +1,7 @@
 import {
   AlertTriangle,
   TrendingUp,
-  CircleCheckBig,
+  CheckCircle,
 } from "lucide-react";
 
 const insights = [
@@ -22,7 +22,7 @@ const insights = [
       "AQI may increase by approximately 12% in the next 6 hours.",
   },
   {
-    icon: CircleCheckBig,
+    icon: CheckCircle,
     color: "text-green-500",
     bg: "bg-green-50",
     title: "Recommended Action",
@@ -33,8 +33,8 @@ const insights = [
 
 export default function AIInsights() {
   return (
-    <div className="rounded-2xl border bg-white p-6 shadow-sm">
-      <h2 className="mb-6 text-xl font-semibold">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 className="mb-6 text-xl font-semibold text-slate-900">
         AI Decision Insights
       </h2>
 
@@ -47,12 +47,10 @@ export default function AIInsights() {
               key={item.title}
               className={`flex items-start gap-4 rounded-xl p-4 ${item.bg}`}
             >
-              <Icon
-                className={`mt-1 h-6 w-6 ${item.color}`}
-              />
+              <Icon className={`mt-1 h-6 w-6 ${item.color}`} />
 
               <div>
-                <h3 className="font-semibold">
+                <h3 className="font-semibold text-slate-900">
                   {item.title}
                 </h3>
 
