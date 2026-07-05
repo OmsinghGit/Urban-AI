@@ -1,6 +1,6 @@
-from fastapi import APIRouter
-from fastapi import Query
+from fastapi import APIRouter, Query
 
+from app.schemas.dashboard import DashboardResponse
 from app.services.dashboard_service import DashboardService
 from app.clients.weather_client import WeatherClient
 
@@ -45,9 +45,13 @@ def get_dashboard():
         ],
     }
 
-@router.get("/live")
+
+@router.get(
+    "/live",
+    response_model=DashboardResponse,
+)
 async def get_live_dashboard(
-    city: str = Query(default="Delhi")
+    city: str = Query(default="Delhi"),
 ):
     return await DashboardService.get_live_dashboard(city)
 

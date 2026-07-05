@@ -1,6 +1,7 @@
 from app.clients.aqicn_client import AQICNClient
 from app.clients.weather_client import WeatherClient
-
+from fastapi import HTTPException
+from app.services.ai_summary_service import AISummaryService
 
 class DashboardService:
 
@@ -12,9 +13,10 @@ class DashboardService:
             weather = await WeatherClient.get_city(city)
 
         except Exception:
-            return {
-                "error": "City not found"
-            }
+            raise HTTPException(
+                status_code=404,
+                detail=f"City '{city}' not found."
+    )
 
         waqi_data = waqi["data"]
 
@@ -71,4 +73,12 @@ class DashboardService:
                 "condition": weather_condition,
             },
             "aqiTrend": [],
+            "summary": AISummaryService.generate(
+                aqi=aqi,
+                pm25=pm25,
+                temperature=temperature,
+                humidity=humidity,
+                condition=weather_condition,
+                risk=risk,
+            ),
         }

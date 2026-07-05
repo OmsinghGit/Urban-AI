@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDashboard } from "../services/dashboard.service";
 import type { DashboardResponse } from "../services/dashboard.service";
+import axios from "axios";
 
 export function useDashboard(city: string) {
   const [dashboard, setDashboard] =
@@ -19,9 +20,14 @@ export function useDashboard(city: string) {
 
         setDashboard(data);
         setError("");
-      } catch {
+      } catch (err) {
         setDashboard(null);
-        setError("City not found");
+
+        if (axios.isAxiosError(err)) {
+          setError(err.response?.data?.detail ?? "Unable to load dashboard.");
+        } else {
+          setError("Something went wrong.");
+        }
       } finally {
         setLoading(false);
       }

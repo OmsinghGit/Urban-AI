@@ -8,6 +8,8 @@ import WeatherCard from "../components/dashboard/WeatherCard";
 
 import { useDashboard } from "../hooks/useDashboard";
 
+import AISummary from "../components/dashboard/AISummary";
+
 export default function Dashboard() {
   const [inputCity, setInputCity] = useState("Delhi");
 const [city, setCity] = useState("Delhi");
@@ -111,10 +113,25 @@ const {
 
       {/* AI Insights + Weather */}
       <div className="grid gap-6 xl:grid-cols-2">
-        <AIInsights />
+        <AISummary summary={dashboard.summary} />
 
         <WeatherCard weather={dashboard.weather} />
       </div>
     </div>
   );
 }
+
+export type WeatherInfo = {
+  temperature: number;
+  humidity: number;
+  wind: number;
+  condition: string;
+};
+
+export type DashboardResponse = {
+  stats: DashboardStat[];
+  aqiTrend: AQITrend[];
+  city: string;
+  weather: WeatherInfo;
+  summary: string;
+};

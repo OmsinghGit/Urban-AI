@@ -24,9 +24,10 @@ export type WeatherInfo = {
 
 export type DashboardResponse = {
   stats: DashboardStat[];
-  aqiTrend: AQITrend[];
   city: string;
   weather: WeatherInfo;
+  summary: string;
+  aqiTrend: AQITrend[];
 };
 export async function getDashboard(
   city: string = "Delhi"
@@ -40,3 +41,4 @@ export async function getDashboard(
 
   return response.data;
 }
+
