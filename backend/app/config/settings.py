@@ -3,5 +3,5 @@ import os
 
 load_dotenv()
 
-AQICN_API_KEY = os.getenv("AQICN_API_KEY")
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
+AQICN_API_KEY = os.getenv("AQICN_API_KEY")
