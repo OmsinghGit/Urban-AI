@@ -10,13 +10,13 @@ class ForecastService:
 
         forecast = []
 
-        # OpenWeather returns data every 3 hours.
-        # Taking every 8th item gives approximately one reading per day.
+        # OpenWeather gives data every 3 hours.
+        # Taking one record every 24 hours (8 x 3h).
         for item in data["list"][::8]:
 
             forecast.append(
                 {
-                    "date": item["dt_txt"].split()[0],
+                    "date": item["dt_txt"].split(" ")[0],
                     "temperature": round(item["main"]["temp"]),
                     "humidity": item["main"]["humidity"],
                     "wind": item["wind"]["speed"],
