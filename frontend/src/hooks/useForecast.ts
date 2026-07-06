@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 
-import {
-  getForecast,
-  ForecastDay,
-} from "../services/forecast.service";
+import { getForecast } from "../services/forecast.service";
+import type { ForecastDay } from "../services/forecast.service";
 
 export function useForecast(city: string) {
   const [forecast, setForecast] =
