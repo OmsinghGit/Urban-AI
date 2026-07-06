@@ -1,3 +1,13 @@
+
+
+console.log("loading =", loading);
+console.log("error =", error);
+console.log("dashboard =", dashboard);
+
+
+
+
+
 import { useState } from "react";
 
 import StatCards from "../components/dashboard/StatCards";
@@ -20,15 +30,33 @@ const {
   error,
 } = useDashboard(city);
 
-  if (loading || !dashboard) {
-    return (
-      <div className="flex h-[70vh] items-center justify-center">
-        <h2 className="text-2xl font-semibold text-slate-600">
-          Loading Dashboard...
-        </h2>
-      </div>
-    );
-  }
+ if (loading) {
+  return (
+    <div className="flex h-[70vh] items-center justify-center">
+      <h2 className="text-2xl font-semibold">
+        Loading Dashboard...
+      </h2>
+    </div>
+  );
+}
+
+if (error) {
+  return (
+    <div className="flex h-[70vh] items-center justify-center">
+      <h2 className="text-xl font-semibold text-red-500">
+        {error}
+      </h2>
+    </div>
+  );
+}
+
+if (!dashboard) {
+  return (
+    <div className="flex h-[70vh] items-center justify-center">
+      <h2>No dashboard data.</h2>
+    </div>
+  );
+}
 
   if (error) {
   return (
