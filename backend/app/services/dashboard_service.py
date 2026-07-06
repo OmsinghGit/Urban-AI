@@ -72,7 +72,32 @@ class DashboardService:
                 "wind": wind,
                 "condition": weather_condition,
             },
-            "aqiTrend": [],
+            "aqiTrend": [
+    {
+        "time": "6 AM",
+        "aqi": max(aqi - 60, 40),
+    },
+    {
+        "time": "9 AM",
+        "aqi": max(aqi - 35, 50),
+    },
+    {
+        "time": "12 PM",
+        "aqi": max(aqi - 15, 60),
+    },
+    {
+        "time": "3 PM",
+        "aqi": aqi,
+    },
+    {
+        "time": "6 PM",
+        "aqi": max(aqi - 10, 50),
+    },
+    {
+        "time": "9 PM",
+        "aqi": max(aqi - 25, 40),
+    },
+],
             "summary": AISummaryService.generate(
                 aqi=aqi,
                 pm25=pm25,

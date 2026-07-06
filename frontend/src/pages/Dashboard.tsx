@@ -94,17 +94,9 @@ const {
       {/* Chart + Map */}
       <div className="grid gap-6 xl:grid-cols-3">
         <div className="xl:col-span-2">
+
           <AQIChart
-            data={
-              dashboard.aqiTrend.length
-                ? dashboard.aqiTrend
-                : [
-                    {
-                      time: "Now",
-                      aqi: Number(dashboard.stats[0].value),
-                    },
-                  ]
-            }
+            data={dashboard.aqiTrend}
           />
         </div>
 
