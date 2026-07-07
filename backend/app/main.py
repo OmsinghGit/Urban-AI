@@ -6,7 +6,7 @@ from app.api.forecast import router as forecast_router
 from app.api.policy import router as policy_router
 from app.api.report import router as report_router
 from app.api.pdf import router as pdf_router
-
+from app.api.compare import router as compare_router
 
 app = FastAPI(
     title="AERIS API",
@@ -28,6 +28,7 @@ app.include_router(forecast_router)
 app.include_router(policy_router)
 app.include_router(report_router)
 app.include_router(pdf_router)
+app.include_router(compare_router)
 
 @app.get("/")
 def home():

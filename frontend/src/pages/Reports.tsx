@@ -101,10 +101,16 @@ export default function Reports() {
       </div>
 
       <button
-        className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
-      >
-        Download PDF
-      </button>
+  onClick={() =>
+    window.open(
+      "http://127.0.0.1:8000/pdf?city=Delhi",
+      "_blank"
+    )
+  }
+  className="rounded-xl bg-blue-600 px-6 py-3 text-white"
+>
+  Download PDF
+</button>
 
     </div>
   );
