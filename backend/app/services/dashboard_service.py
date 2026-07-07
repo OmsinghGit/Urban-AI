@@ -1,7 +1,9 @@
+from fastapi import HTTPException
+
 from app.clients.aqicn_client import AQICNClient
 from app.clients.weather_client import WeatherClient
-from fastapi import HTTPException
 from app.services.ai_summary_service import AISummaryService
+
 
 class DashboardService:
 
@@ -15,8 +17,8 @@ class DashboardService:
         except Exception:
             raise HTTPException(
                 status_code=404,
-                detail=f"City '{city}' not found."
-    )
+                detail=f"City '{city}' not found.",
+            )
 
         waqi_data = waqi["data"]
 
@@ -41,6 +43,15 @@ class DashboardService:
             risk = "Very Unhealthy"
         else:
             risk = "Hazardous"
+
+        summary = AISummaryService.generate(
+            aqi=aqi,
+            pm25=pm25,
+            temperature=temperature,
+            humidity=humidity,
+            condition=weather_condition,
+            risk=risk,
+        )
 
         return {
             "stats": [
@@ -73,37 +84,30 @@ class DashboardService:
                 "condition": weather_condition,
             },
             "aqiTrend": [
-    {
-        "time": "6 AM",
-        "aqi": max(aqi - 60, 40),
-    },
-    {
-        "time": "9 AM",
-        "aqi": max(aqi - 35, 50),
-    },
-    {
-        "time": "12 PM",
-        "aqi": max(aqi - 15, 60),
-    },
-    {
-        "time": "3 PM",
-        "aqi": aqi,
-    },
-    {
-        "time": "6 PM",
-        "aqi": max(aqi - 10, 50),
-    },
-    {
-        "time": "9 PM",
-        "aqi": max(aqi - 25, 40),
-    },
-],
-            "summary": AISummaryService.generate(
-                aqi=aqi,
-                pm25=pm25,
-                temperature=temperature,
-                humidity=humidity,
-                condition=weather_condition,
-                risk=risk,
-            ),
+                {
+                    "time": "6 AM",
+                    "aqi": max(aqi - 60, 40),
+                },
+                {
+                    "time": "9 AM",
+                    "aqi": max(aqi - 35, 50),
+                },
+                {
+                    "time": "12 PM",
+                    "aqi": max(aqi - 15, 60),
+                },
+                {
+                    "time": "3 PM",
+                    "aqi": aqi,
+                },
+                {
+                    "time": "6 PM",
+                    "aqi": max(aqi - 10, 50),
+                },
+                {
+                    "time": "9 PM",
+                    "aqi": max(aqi - 25, 40),
+                },
+            ],
+            "summary": summary,
         }

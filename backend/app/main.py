@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.dashboard import router as dashboard_router
 from app.api.forecast import router as forecast_router
 from app.api.policy import router as policy_router
-
+from app.api.report import router as report_router
 
 app = FastAPI(
     title="AERIS API",
@@ -24,6 +24,7 @@ app.add_middleware(
 app.include_router(dashboard_router)
 app.include_router(forecast_router)
 app.include_router(policy_router)
+app.include_router(report_router)
 
 @app.get("/")
 def home():
