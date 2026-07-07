@@ -1,8 +1,12 @@
 import { useState } from "react";
+
 import { usePolicy } from "../hooks/usePolicy";
+import { useDashboard } from "../hooks/useDashboard";
 
 export default function PolicySimulator() {
   const { result, loading, predict } = usePolicy();
+
+  const { dashboard } = useDashboard("Delhi");
 
   const [traffic, setTraffic] = useState(30);
   const [industry, setIndustry] = useState(30);
@@ -32,17 +36,49 @@ export default function PolicySimulator() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
 
-      <h1 className="text-4xl font-bold">
-        Policy Simulator
-      </h1>
+      {/* Header */}
 
-      {/* Sliders */}
+      <div>
 
-      <div className="space-y-6 rounded-2xl border bg-white p-6 shadow-sm">
+        <h1 className="text-4xl font-bold text-slate-900">
+          Policy Simulator
+        </h1>
+
+        <p className="mt-2 text-slate-500">
+          Simulate environmental policies and predict their impact on AQI.
+        </p>
+
+      </div>
+
+      {/* Current City */}
+
+      <div className="rounded-xl border bg-white p-5 shadow-sm">
+
+        <p className="text-slate-500">
+          Current City
+        </p>
+
+        <h2 className="mt-1 text-2xl font-bold">
+          {dashboard?.city ?? "Delhi"}
+        </h2>
+
+        <p className="mt-2 text-slate-500">
+          Current AQI :
+          <span className="ml-2 font-semibold text-blue-600">
+            {dashboard?.stats[0]?.value ?? "170"}
+          </span>
+        </p>
+
+      </div>
+
+      {/* Controls */}
+
+      <div className="space-y-8 rounded-2xl border bg-white p-8 shadow-sm">
 
         <div>
+
           <label className="font-medium">
             Traffic Reduction ({traffic}%)
           </label>
@@ -55,11 +91,13 @@ export default function PolicySimulator() {
             onChange={(e) =>
               setTraffic(Number(e.target.value))
             }
-            className="w-full"
+            className="mt-2 w-full"
           />
+
         </div>
 
         <div>
+
           <label className="font-medium">
             Industrial Emission Control ({industry}%)
           </label>
@@ -72,11 +110,13 @@ export default function PolicySimulator() {
             onChange={(e) =>
               setIndustry(Number(e.target.value))
             }
-            className="w-full"
+            className="mt-2 w-full"
           />
+
         </div>
 
         <div>
+
           <label className="font-medium">
             Construction Control ({construction}%)
           </label>
@@ -89,11 +129,13 @@ export default function PolicySimulator() {
             onChange={(e) =>
               setConstruction(Number(e.target.value))
             }
-            className="w-full"
+            className="mt-2 w-full"
           />
+
         </div>
 
         <div>
+
           <label className="font-medium">
             Green Cover Increase ({greenery}%)
           </label>
@@ -106,34 +148,30 @@ export default function PolicySimulator() {
             onChange={(e) =>
               setGreenery(Number(e.target.value))
             }
-            className="w-full"
+            className="mt-2 w-full"
           />
+
         </div>
 
         <button
+          disabled={loading}
           onClick={() =>
             predict({
-              currentAQI: 170,
+              currentAQI: Number(
+                dashboard?.stats[0]?.value ?? 170
+              ),
               traffic,
               industry,
               construction,
               greenery,
             })
           }
-          className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+          className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Predict AQI
+          {loading ? "Predicting..." : "Predict AQI"}
         </button>
 
       </div>
-
-      {/* Loading */}
-
-      {loading && (
-        <p className="text-lg font-medium">
-          Predicting...
-        </p>
-      )}
 
       {/* Result */}
 
@@ -145,50 +183,58 @@ export default function PolicySimulator() {
             Simulation Result
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2">
 
             <div>
+
               <p className="text-slate-500">
                 Current AQI
               </p>
 
-              <p className="text-4xl font-bold">
+              <p className="mt-2 text-5xl font-bold text-blue-600">
                 {result.currentAQI}
               </p>
+
             </div>
 
             <div>
+
               <p className="text-slate-500">
                 Predicted AQI
               </p>
 
-              <p className="text-4xl font-bold text-green-600">
+              <p className="mt-2 text-5xl font-bold text-green-600">
                 {result.predictedAQI}
               </p>
+
             </div>
 
             <div>
+
               <p className="text-slate-500">
                 Improvement
               </p>
 
-              <p className="text-2xl font-semibold">
+              <p className="mt-2 text-3xl font-semibold">
                 {result.improvement}%
               </p>
+
             </div>
 
             <div>
+
               <p className="text-slate-500">
                 Risk Level
               </p>
 
               <p
-                className={`text-2xl font-semibold ${getRiskColor(
+                className={`mt-2 text-3xl font-bold ${getRiskColor(
                   result.risk
                 )}`}
               >
                 {result.risk}
               </p>
+
             </div>
 
           </div>
