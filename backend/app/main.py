@@ -5,6 +5,8 @@ from app.api.dashboard import router as dashboard_router
 from app.api.forecast import router as forecast_router
 from app.api.policy import router as policy_router
 from app.api.report import router as report_router
+from app.api.pdf import router as pdf_router
+
 
 app = FastAPI(
     title="AERIS API",
@@ -25,6 +27,7 @@ app.include_router(dashboard_router)
 app.include_router(forecast_router)
 app.include_router(policy_router)
 app.include_router(report_router)
+app.include_router(pdf_router)
 
 @app.get("/")
 def home():
