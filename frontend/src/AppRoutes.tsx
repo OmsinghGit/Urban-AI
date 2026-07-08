@@ -9,6 +9,8 @@ import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
+import CompareCities from "./pages/CompareCities";
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -21,6 +23,10 @@ export default function AppRoutes() {
       </Route>
 
       <Route path="*" element={<NotFound />} />
+      <Route
+  path="/compare"
+  element={<CompareCities />}
+/>
     </Routes>
   );
 }
