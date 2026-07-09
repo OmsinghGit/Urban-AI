@@ -1,9 +1,6 @@
 import { useState } from "react";
-
-import {
-  predictPolicy,
-  PolicyResponse,
-} from "../services/policy.service";
+import { predictPolicy } from "../services/policy.service";
+import type { PolicyResponse } from "../services/policy.service";
 
 export function usePolicy() {
   const [result, setResult] =
