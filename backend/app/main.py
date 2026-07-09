@@ -24,11 +24,16 @@ app.add_middleware(
 
 # Register API Routers
 app.include_router(dashboard_router)
+
 app.include_router(forecast_router)
+
 app.include_router(policy_router)
+
 app.include_router(report_router)
-app.include_router(pdf_router)
+
 app.include_router(compare_router)
+
+app.include_router(pdf_router)
 
 @app.get("/")
 def home():
