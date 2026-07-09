@@ -1,6 +1,10 @@
 import { useState } from "react";
+
 import { predictPolicy } from "../services/policy.service";
-import type { PolicyResponse } from "../services/policy.service";
+import type {
+  PolicyRequest,
+  PolicyResponse,
+} from "../services/policy.service";
 
 export function usePolicy() {
   const [result, setResult] =
@@ -9,7 +13,9 @@ export function usePolicy() {
   const [loading, setLoading] =
     useState(false);
 
-  async function predict(payload: any) {
+  async function predict(
+    payload: PolicyRequest
+  ) {
     setLoading(true);
 
     try {
